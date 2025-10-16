@@ -2,6 +2,11 @@ import streamlit as st
 import itertools
 from fractions import Fraction
 
+st.set_page_config(
+    page_title="Erster Obstgarten mathematisch analysiert",
+    page_icon="🍎"
+)
+
 def calculate_states():
     states = []
     for rabe in range(6):

@@ -7,6 +7,19 @@ st.set_page_config(
     page_icon="🍎"
 )
 
+def basis_vector(n, k):
+    vec = [Fraction(0)] * n
+    vec[k] = Fraction(1)
+    return vec
+
+def linear_combination(vectors, coefficients):
+    n = len(vectors[0])
+    result = [Fraction(0)] * n
+    for vec, coeff in zip(vectors, coefficients):
+        for i in range(n):
+            result[i] += vec[i] * coeff
+    return result
+
 def calculate_states():
     states = []
     for rabe in range(6):

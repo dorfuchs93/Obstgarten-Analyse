@@ -23,7 +23,7 @@ def linear_combination(vectors, coefficients):
 
 def calculate_states():
     states = []
-    for rabe in range(6):
+    for rabe in range(7):
         for tree in itertools.product(range(5), repeat=4):
             state = tuple([rabe] + list(tree))
             states.append(state)
@@ -90,7 +90,7 @@ Dieses Tool berechnet die Gewinnwahrscheinlichkeiten für das Spiel **Erster Obs
 Gib hier den Zustand des Spiels ein. Voreingestellt ist der Anfangszustand des Spiels, wo der Rabe 5 Felder vom Obstgarten entfernt ist und auf jedem Baum 4 Früchte liegen.
 """
 
-rabe = st.number_input(label="🐦‍⬛ Rabe", min_value=0, max_value=5, value=5, step=1)
+rabe = st.number_input(label="🐦‍⬛ Rabe", min_value=0, max_value=6, value=5, step=1)
 
 col1, col2, col3, col4 = st.columns(4)
 min_val = 0

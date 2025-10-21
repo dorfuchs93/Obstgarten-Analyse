@@ -32,9 +32,9 @@ def calculate_states():
     for state in states:
         if state[0] == 0: # Rabe hat den Obstgarten erreicht
             obst = sum(state[1:])
-            probabilites[state] = (Fraction(0), Fraction(0), basis_vector(22, 16-obst), basis_vector(22, 16-obst))
+            probabilites[state] = (Fraction(0), Fraction(0), basis_vector(23, 16-obst), basis_vector(23, 16-obst))
         elif sum(state[1:]) == 0: # Kein Obst mehr auf Bäumen
-            probabilites[state] = (Fraction(1), Fraction(1), basis_vector(22, 16+state[0]), basis_vector(22, 16+state[0]))
+            probabilites[state] = (Fraction(1), Fraction(1), basis_vector(23, 16+state[0]), basis_vector(23, 16+state[0]))
         else:
             # n = Anzahl der möglichen Züge sind Rabe, nicht-leere Farben und Obstkorb
             n = sum(1 for x in state if x != 0) + 1
@@ -152,7 +152,7 @@ else:
     p_min, p_max, hist_min, hist_max = p[state]
 
     df = pd.DataFrame({
-        "Ergebnis": list(range(-16, 6)),
+        "Ergebnis": list(range(-16, 7)),
         "Min-Strategie": [float(x) for x in hist_min],
         "Max-Strategie": [float(x) for x in hist_max]
     })
